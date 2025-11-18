@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # As a user, I can add a new task
-  get "tasks/new", to: "tasks#new"
+  get "tasks/new", to: "tasks#new", as: :new_task
   post "tasks", to: "tasks#create"
   # As a user, I can list tasks => tasks#index
   get "tasks", to: "tasks#index"
