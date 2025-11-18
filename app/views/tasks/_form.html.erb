@@ -1,17 +1,16 @@
-<div class="container">
-  <%= form_with model: task, class: "py-3" do |f| %>
-    <div class="mb-3">
-      <%= f.label :title, class: "form-label" %>
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
-    <div class="mb-3">
-      <%= f.label :details, class: "form-label" %>
-      <%= f.text_field :details, class: "form-control" %>
-    </div>
-    <div class="mb-3">
-      <%= f.label :completed, class: "form-check-label" %>
-      <%= f.check_box :completed, class: "form-check-input" %>
-    </div>
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  <% end %>
-</div>
+<%= form_with model: task, class: "w-50 py-3" do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :details, class: "form-label" %>
+    <%= f.text_field :details, class: "form-control" %>
+  </div>
+  <div class="mb-3 form-check">
+    <%= f.label :completed, class: "form-check-label" %>
+    <%= f.check_box :completed, class: "form-check-input" %>
+  </div>
+  <%= f.submit value = nil, class: "btn btn-primary" %>
+  <%= link_to "Back to Tasks", tasks_path, class: "" %>
+<% end %>
