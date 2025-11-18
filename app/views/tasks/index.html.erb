@@ -1,12 +1,21 @@
 <h1>Tasks</h1>
-<ul>
+<div class="list-group mb-3">
   <% @tasks.each do |task| %>
-    <li class="mb-3">
-      <%= link_to task.title, task_path(task), class: "" %> | <%= link_to "Delete Task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Add a New Task", new_task_path %>
+    <div class="row">
 
-<%# We now have a list of tasks, and we would like to click on the task title and
-navigate to a new page, displaying the details of this task. %>
+      <div class="col-6 px-0">
+        <%= link_to task.title, task_path(task), class: "list-group-item list-group-item-action" %>
+      </div>
+      <div class="col-3 px-0">
+        <div class="list-group-item list-group-item-action">
+            <input class="form-check-input" type="checkbox" id="checkbox">
+            <label class="form-check-label" for="checkbox">Completed</label>
+        </div>
+      </div>
+      <div class="col-3 px-0">
+          <%= link_to "Delete Task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "list-group-item list-group-item-action text-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Add a New Task", new_task_path %>
