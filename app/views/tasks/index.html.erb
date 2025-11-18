@@ -2,8 +2,11 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      Task: <%= task.title %>, Details: <%= task.details %>, Completed: <%= task.completed %>
-      <%= link_to "Delete Task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to task.title, task_path(task) %> | <%= link_to "Delete Task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </li>
   <% end %>
 </ul>
+<%= link_to "Add a New Task", tasks_new_path %>
+
+<%# We now have a list of tasks, and we would like to click on the task title and
+navigate to a new page, displaying the details of this task. %>
