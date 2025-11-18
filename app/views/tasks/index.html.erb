@@ -1,0 +1,9 @@
+<h1>Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      Task: <%= task.title %>, Details: <%= task.details %>, Completed: <%= task.completed %>
+      <%= link_to "Delete Task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
