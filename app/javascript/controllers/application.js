@@ -6,4 +6,7 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+import TasksController from "./tasks_controller.js"
+Stimulus.register("tasks", TasksController)
+
 export { application }
